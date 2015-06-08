@@ -1,11 +1,11 @@
 Package: poker
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Poker related functions
 Version: 0.1
 Date: 2015-06-06
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Fran Urbano
+Maintainer: Fran Urbano <viraltux@gmail.com>
+Description: The package contain a set of functionalities to analyze poker hands
+License: GPL v.3
 LazyData: TRUE
 Suggests: testthat
