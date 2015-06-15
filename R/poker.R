@@ -1,6 +1,7 @@
 ## Initializes Package
 
 .onLoad<- function(libname, pkgname){
+
   constants <- parse( text = "
     deck <- NULL
     for (j in c('♣','♦','♥','♠')){
@@ -8,7 +9,7 @@
         deck <- c(deck,paste(i,j,sep=''))
       }
     }
-    assign('deck', deck, envir = baseenv())",
+      assign('deck', deck,  envir=parent.env(environment()))",
                       encoding="UTF-8")
 
   eval(constants)
