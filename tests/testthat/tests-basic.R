@@ -3,10 +3,15 @@ context('Basic')
 test_that('basic', {
   left <- c("J♥","2♦","10♥","A♥","3♠","Q♥","K♥")
   right <- c("J♥","2♦","10♥","A♥","3♠","Q♦","K♥")
+  center <- c("J♥","2♦","10♥","2♥","3♠","Q♦","K♥")
 
   expect_is(bhand(left),'hand')
   expect_true(left%==%left)
   expect_true(left%>=%right)
+  expect_true(right%<=%left)
+  expect_true(right%!=%center)
+  expect_true(right%>=%center)
+  expect_true(center%<=%right)
 
   cat('\n')
 
