@@ -33,7 +33,7 @@ group.high <- function(cards, type){
   if (type == 'suit') {
     c <- as.numeric(table(get.cards(cards,'suit')))
     s <-  names(table(get.cards(cards,'suit')))
-    pattern <- s[which(max(c)==c)]
+    pattern <- s[which(max(c)==c)][1]
     return(list(group = c,
                 high = group.high(cards[grep(pattern,cards)],'rank')$high))
   }
@@ -102,7 +102,8 @@ bhand <- function(cards){
   return(bcards('High',1,cr$high))
 }
 
-print.hand <- function(hand,...){
+
+print.hand <- function(hand, ...){
   # Print information for a poker hand from the class 'hand'
 
   high.name <- hand$high
@@ -132,3 +133,4 @@ gop<- function(left,op,right){
 '%<=%'<- function(left,right){gop(left,'<=',right)}
 '%>=%'<- function(left,right){gop(left,'>=',right)}
 '%==%'<- function(left,right){gop(left,'==',right)}
+'%!=%'<- function(left,right){gop(left,'!=',right)}
