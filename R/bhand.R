@@ -72,12 +72,11 @@ straight <- function(cards){
 bhand <- function(cards){
   # Returns the best poker hand within a set of cards
 
-  # TODO(fran) When checking for the format of a set of cards testthat breaks
-  # due to due most likely to encoding.
-  # parse(text="nright <- length(grep('^(([2-9]|10)|[AJQK])[♣♦♥♠]$',cards))",
-  #       encoding="UTF-8")
-  # nright <- length(grep('^(([2-9]|10)|[AJQK])[♣♦♥♠]$',cards))
-  # if (length(cards) != nright) {stop('Cards not properly formatted.')}
+  #Using [] breaks testthat not encoding in latin1 breaks bhand
+  #
+  cards <- `Encoding<-`(cards,'latin1')
+  nright <- length(grep('^(([2-9]|10)|[AJQK])(♣|♦|♥|♠)$',cards))
+  if (length(cards) != nright) {stop('Cards not properly formatted.')}
 
   cr <- group.high(cards,'rank')
   co <- group.high(cards,'order')
