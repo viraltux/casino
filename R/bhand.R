@@ -72,8 +72,7 @@ straight <- function(cards){
 bhand <- function(cards){
   # Returns the best poker hand within a set of cards
 
-  #Using [] breaks testthat not encoding in latin1 breaks bhand
-  #
+  # Using [] breaks testthat & not encoding in latin1 breaks bhand
   cards <- `Encoding<-`(cards,'latin1')
   nright <- length(grep('^(([2-9]|10)|[AJQK])(♣|♦|♥|♠)$',cards))
   if (length(cards) != nright) {stop('Cards not properly formatted.')}
