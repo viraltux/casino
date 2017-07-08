@@ -13,8 +13,9 @@ bhand(cards)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{cards}{
-   vector containing poker cards following the regular expresion:
-       ^(([2-9]|10)|[AJQK])[♣♦♥♠]$
+
+%   vector containing poker cards following the regular expresion:
+ %      ^(([2-9]|10)|[AJQK])[♣|♦|♥|♠]$
 }
 }
 \details{
@@ -43,8 +44,9 @@ Fran Urbano
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-  #Three of a kind
-  cards = c("2♦","J♦","4♠","A♣","A♠","A♥","K♠")
+  #Three of a kind quiza  
+
+  cards = c("2D","JD","4S","AC","AS","AH","KS")
   bh <- bhand(cards)
   names(bh)
   bh
