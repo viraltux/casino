@@ -1,5 +1,4 @@
 importFrom("utils", "capture.output")
-## export(bhand, "%>%", "%<%", "%>=%", "%<=%", "%!=%", "%==%")
-export(bhand, "%==%")
+export(bhand, "%>%", "%<%", "%>=%", "%<=%", "%!=%", "%==%")
 
 S3method(print, hand)
