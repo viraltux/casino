@@ -15,10 +15,11 @@ bhand(cards)
   \item{cards}{
 
 %   vector containing poker cards following the regular expresion:
- %      ^(([2-9]|10)|[AJQK])[♣|♦|♥|♠]$
+ %      ^(([2-9]|10)|[AJQK])[HDSC]$
 }
 }
 \details{
+  details here..
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
@@ -28,21 +29,13 @@ hand: Object of class 'hand' containing information about the best hand found wi
      high : Number indicating how high is the hand within its category
      score: Number that allow to compare two hands level*100 + high
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
-Fran Urbano
-}
-\note{
-%%  ~~further notes~~
+  Fran Urbano <viraltux@gmail.com>
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
   #Three of a kind quiza  
 

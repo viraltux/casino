@@ -71,6 +71,7 @@ straight <- function(cards){
 
 bhand <- function(cards){
     ## Returns the best poker hand within a set of cards
+    
     us <- '^(([2-9]|10)|[AJKQ])[SCHD]$'
     nright <- length(grep(us,cards))
     if (length(cards) != nright) {stop('Cards not properly formatted.')}
@@ -98,18 +99,9 @@ bhand <- function(cards){
     return(bcards('High',1,cr$high))
 }
 
-touni <- function(cards){
-    ## Converts cards to unicode format
-    cards <- gsub('S','\\\\u2660',cards)
-    cards <- gsub('C','\\\\u2663',cards)
-    cards <- gsub('H','\\\\u2665',cards)
-    cards <- gsub('D','\\\\u2666',cards)
-    stringi::stri_unescape_unicode(cards)
-}
-
-print.hand <- function(hand, ...){
+print.hand <- function(x, ...){
     ## Print information for a poker hand from the class 'hand'
-    
+    hand <- x
     high.name <- hand$high
     if (high.name == 14) {high.name <- 'Ace'}
     if (high.name == 13) {high.name <- 'King'}
@@ -124,20 +116,3 @@ print.hand <- function(hand, ...){
     desc <- paste(desc,'\n',sep='')
     cat(desc)
 }
-
-gop<- function(left,op,right){
-  ## Checks for equalities and inequalities between poker hands
-  capture.output(if (class(left) == 'hand' & class(left) == 'hand'){
-    bl <- left
-    br <- right
-  } else {bl <- bhand(left); br <- bhand(right)}, file='NUL')
-  return(eval(parse(text = paste('(bl$level*100 + bl$high)', op,
-                                 '(br$level*100 + br$high)'))))
-}
-
-'%>%'<- function(left,right){gop(left,'>',right)}
-'%<%'<- function(left,right){gop(left,'<',right)}
-'%<=%'<- function(left,right){gop(left,'<=',right)}
-'%>=%'<- function(left,right){gop(left,'>=',right)}
-'%==%'<- function(left,right){gop(left,'==',right)}
-'%!=%'<- function(left,right){gop(left,'!=',right)}

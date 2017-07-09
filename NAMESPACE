@@ -1,3 +1,5 @@
-export(bhand, deck, '%>%','%<%','%>=%','%<=%','%==%')
+importFrom("utils", "capture.output")
+## export(bhand, "%>%", "%<%", "%>=%", "%<=%", "%!=%", "%==%")
+export(bhand, "%==%")
 
 S3method(print, hand)

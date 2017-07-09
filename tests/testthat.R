@@ -1,4 +1,4 @@
+Sys.setenv("R_TESTS" = "")
 library(testthat)
-library(poker)
-
 test_check("poker")
+
