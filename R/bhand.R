@@ -1,5 +1,5 @@
 get.cards <- function(cards, info){
-  # Returns the rank, order or suit information regards a set or cards
+  ## Returns the rank, order or suit information regards a set or cards
 
   if (!(info %in% c('rank','order','suit'))) stop('No info set or available')
 
@@ -18,7 +18,7 @@ get.cards <- function(cards, info){
 }
 
 group.high <- function(cards, type){
-  #group summary per type and highest card per type
+  ## group summary per type and highest card per type
 
   if (type == 'rank') {
     c <- as.numeric(table(get.cards(cards,'rank')))
@@ -41,8 +41,8 @@ group.high <- function(cards, type){
 
 
 straight <- function(cards){
-  # Checks for a straight in a set of cards returning the highest card
-  # within the straight and 0 if no straight is found
+  ## Checks for a straight in a set of cards returning the highest card
+  ## within the straight and 0 if no straight is found
 
   sr <- paste(-diff(sort(get.cards(cards,'rank'), decreasing = TRUE)),collapse = '')
   i <- regexpr('1{4,}', sr)[1]
