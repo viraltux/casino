@@ -1,4 +1,5 @@
 \name{rop}
+\alias{rop}
 \alias{\%==\%}
 \alias{\%!=\%}
 \alias{\%>=\%}
