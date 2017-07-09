@@ -5,8 +5,7 @@ Version: 0.1.0
 Date: 2017-07-09
 Author: Fran Urbano
 Maintainer: Fran Urbano <viraltux@gmail.com>
-Description: The package contain a set of functionalities
-             to analyze games.
+Description: Functionalities to analyze games.
 License: GPL-3
 Imports: stringi
 Suggests: testthat
