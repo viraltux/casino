@@ -1,12 +1,12 @@
 Package: casino
 Type: Package
-Title: Analytics for Games
+Title: Analytics for Card Games
 Version: 0.1.0
 Date: 2017-07-09
 Author: Fran Urbano
 Maintainer: Fran Urbano <viraltux@gmail.com>
-Description: Functionalities to analyze games like poker
-             and other games commonly found in casinos.
+Description: Functionalities to analyze card based games
+	     like Poker, Blackjack, etc...
 License: GPL-3
 Imports: stringi
 Suggests: testthat
