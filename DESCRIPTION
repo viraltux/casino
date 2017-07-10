@@ -5,7 +5,8 @@ Version: 0.1.0
 Date: 2017-07-09
 Author: Fran Urbano
 Maintainer: Fran Urbano <viraltux@gmail.com>
-Description: Functionalities to analyze games.
+Description: Functionalities to analyze games like poker
+             and other games commonly found in casinos.
 License: GPL-3
 Imports: stringi
 Suggests: testthat

@@ -69,7 +69,7 @@ straight <- function(cards){
   return(0)
 }
 
-bhand <- function(cards){
+poker.strongest <- function(cards){
     ## Returns the best poker hand within a set of cards
     
     us <- '^(([2-9]|10)|[AJKQ])[SCHD]$'
@@ -109,7 +109,7 @@ print.hand <- function(x, ...){
     if (high.name == 11) {high.name <- 'Jack'}
 
     desc <- NULL
-    desc <- paste(paste(touni(sort(hand$cards)),collapse=' '),'\n',sep='')
+    desc <- paste(paste(toutf(sort(hand$cards)),collapse=' '),'\n',sep='')
     if (hand$level == 1)  {desc <- paste(desc, paste(high.name,'high'), sep = '')}
     else {desc <- paste(desc, paste(hand$name, high.name, 'high'), sep = '')}
     if (hand$level == 10) {desc <- paste(desc, paste(desc, hand$name), sep = '')}

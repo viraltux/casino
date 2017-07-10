@@ -1,4 +1,5 @@
 importFrom("utils", "capture.output")
-export(bhand, "%>%", "%<%", "%>=%", "%<=%", "%!=%", "%==%")
+
+export(poker.strongest, deck, toutf, toascii, "%>%", "%<%", "%>=%", "%<=%", "%!=%", "%==%")
 
 S3method(print, hand)

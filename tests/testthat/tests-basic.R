@@ -5,7 +5,7 @@ test_that('basic', {
   right <- c("JH","2D","10H","AH","3S","QD","KH")
   center <- c("JH","2D","10H","2H","3S","QD","KH")
 
-  expect_is(bhand(left),'hand')
+  expect_is(poker.strongest(left),'hand')
   expect_true(left%==%left)
   expect_true(left%>=%right)
   expect_true(right%<=%left)
@@ -16,7 +16,7 @@ test_that('basic', {
   cat('\n')
 
   test.hand <- function(cards, name, level, high){
-    bh <- bhand(cards)
+    bh <- poker.strongest(cards)
     expect_equal(bh$name, name, info = print(bh))
     expect_equal(bh$level, level)
     expect_equal(bh$high, high)
